@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Coste Viajes Real Decreto</string>
     <string name="action_settings">Settings</string>
-    <string name="intro">Selecciona la categoria:</string>
+    <string name="intro">Selecciona un País:</string>
     <string name="noches">Numero de noches de Hotel:</string>
     <string name="pers">Numero de personas:</string>
     <string name="toolbar">Calculadora Viajes Real Decreto</string>
     <string name="boton">Calcular Coste</string>
+    <string name="grupo">Selecciona Grupo Profesional:</string>
 
 </resources>
