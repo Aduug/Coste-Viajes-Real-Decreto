@@ -37,6 +37,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Grupo 2">
 
             </RadioButton>
@@ -54,8 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="15dip"
-            android:paddingTop="15dip"
+            android:layout_marginTop="5dp"
             android:text="@string/intro" />
 
         <Spinner
@@ -72,9 +72,12 @@
             android:text="@string/noches" />
 
         <EditText
+            android:id="@+id/noches"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:numeric="integer"
+            android:maxLength="2"
             android:hint="0" />
 
         <TextView
@@ -84,9 +87,12 @@
             android:text="@string/pers" />
 
         <EditText
+            android:id="@+id/pers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:numeric="integer"
+            android:maxLength="2"
             android:hint="1" />
 
         <Button

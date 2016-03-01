@@ -29,22 +29,37 @@ public class MainActivity extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinner);
 
         List list = new ArrayList();
-        //list.toArray(new String[] { "España", "Reino Unido", "Alemania", "Francia", "Italia", "Estados Unidos", "Suecia", "Suiza", "Austria", "Noruega", "Países Bajos", "Polonia", "Portugal", "Canadá", "Finlandia", "China", "Japón", "India", "Irlanda", "Dinamarca", "Bélgica", "Luxemburgo", "Mexico", "Andorra", "Angola", "Arabia Saudita", "Argelia", "Argentina", "Australia", "Bolivia", "Bosnia-Herzegovina", "Brasil", "Bulgaria", "Camerún", "Chile", "Colombia", "Corea", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "R.Dominicana", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eslovaquia", "Etiopía", "Filipinas", "Gabón", "Ghana", "Grecia", "Guatemala", "Guinea Ecuatorial", "Haití", "Honduras", "Hong Kong", "Hungría", "Indonesia", "Irak", "Iran", "Israel", "Italia", "Jamaica", "Jordania", "Kenia", "Kuwait", "Líbano", "Libia", "Malasia", "Malta", "Marruecos", "Mauritania", "Mozambique", "Nicaragua", "Nigeria", "Nueva Zelanda", "Pakistán", "Panamá", "Paraguay", "Perú", "República Checa", "Rumania", "Rusia", "Senegal", "Singapur", "Siria", "Sudáfrica", "Tailandia", "Taiwán", "Tanzania", "Túnez", "Turquía", "Uruguay", "Venezuela", "Yemen", "Yugoslavia", "Zaire/Congo", "Zimbawe", "Resto del Mundo" });
-        list.add("España");
-        list.add("Francia");
+        //List pais = new ArrayList( { "España", "Reino Unido", "Alemania", "Francia", "Italia", "Estados Unidos", "Suecia", "Suiza", "Austria", "Noruega", "Países Bajos", "Polonia", "Portugal", "Canadá", "Finlandia", "China", "Japón", "India", "Irlanda", "Dinamarca", "Bélgica", "Luxemburgo", "Mexico", "Andorra", "Angola", "Arabia Saudita", "Argelia", "Argentina", "Australia", "Bolivia", "Bosnia-Herzegovina", "Brasil", "Bulgaria", "Camerún", "Chile", "Colombia", "Corea", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "R.Dominicana", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eslovaquia", "Etiopía", "Filipinas", "Gabón", "Ghana", "Grecia", "Guatemala", "Guinea Ecuatorial", "Haití", "Honduras", "Hong Kong", "Hungría", "Indonesia", "Irak", "Iran", "Israel", "Italia", "Jamaica", "Jordania", "Kenia", "Kuwait", "Líbano", "Libia", "Malasia", "Malta", "Marruecos", "Mauritania", "Mozambique", "Nicaragua", "Nigeria", "Nueva Zelanda", "Pakistán", "Panamá", "Paraguay", "Perú", "República Checa", "Rumania", "Rusia", "Senegal", "Singapur", "Siria", "Sudáfrica", "Tailandia", "Taiwán", "Tanzania", "Túnez", "Turquía", "Uruguay", "Venezuela", "Yemen", "Yugoslavia", "Zaire/Congo", "Zimbawe", "Resto del Mundo" });
+        list.add("España");list.add("Alemania");list.add("Andorra");list.add("Angola");
+        list.add("Arabia Saudita");list.add("Argelia");list.add("Argentina");list.add("Australia");
+        list.add("Austria");list.add("Bélgica");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
+        list.add("");list.add("");list.add("");list.add("");
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,list);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
 
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //fab.setOnClickListener(new View.OnClickListener() {
-           // @Override
-            //public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
-          //  }
-        //});
     }
 
     @Override
