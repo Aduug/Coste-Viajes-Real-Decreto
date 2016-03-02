@@ -7,5 +7,13 @@
     <string name="toolbar">Calculadora Viajes Real Decreto</string>
     <string name="boton">Calcular Coste</string>
     <string name="grupo">Selecciona Grupo Profesional:</string>
+    <string name="title_activity_resultado_coste_viaje">ResultadoCosteViaje</string>
+    <string name="Resum1">Para un viaje a </string>
+    <string name="Resum2"> de </string>
+    <string name="Resum3"> días para </string>
+    <string name="Resum4"> personas </string>
+    <string name="Resum5"> el coste máximo del alojamiento es de </string>
+    <string name="Resum6"> y el coste máximo de la manutención de </string>
+    <string name="Resum7"> El coste total del viaje es de </string>
 
 </resources>
