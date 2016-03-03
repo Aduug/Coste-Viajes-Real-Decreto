@@ -1,6 +1,7 @@
 package com.aduug.costeviajesrealdecreto;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -32,8 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     double icManu2 = 0;
     double icAloj3 = 0;
     double icManu3 = 0;
+    double costeAlojF = 0;
+    double costeManuF = 0;
+    double costeTF = 0;
 
     DecimalFormat df = new DecimalFormat("#.##");
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calcular = (Button) findViewById(R.id.calcular);
         spinner = (Spinner) findViewById(R.id.spinner);
         calcular.setOnClickListener(this);
+        noches = (EditText) findViewById(R.id.noches);
+        personas = (EditText) findViewById(R.id.pers);
 
         List list = new ArrayList();
         //List pais = new ArrayList( { "España", "Reino Unido", "Alemania", "Francia", "Italia", "Estados Unidos", "Suecia", "Suiza", "Austria", "Noruega", "Países Bajos", "Polonia", "Portugal", "Canadá", "Finlandia", "China", "Japón", "India", "Irlanda", "Dinamarca", "Bélgica", "Luxemburgo", "Mexico", "Andorra", "Angola", "Arabia Saudita", "Argelia", "Argentina", "Australia", "Bolivia", "Bosnia-Herzegovina", "Brasil", "Bulgaria", "Camerún", "Chile", "Colombia", "Corea", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "R.Dominicana", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eslovaquia", "Etiopía", "Filipinas", "Gabón", "Ghana", "Grecia", "Guatemala", "Guinea Ecuatorial", "Haití", "Honduras", "Hong Kong", "Hungría", "Indonesia", "Irak", "Iran", "Israel", "Italia", "Jamaica", "Jordania", "Kenia", "Kuwait", "Líbano", "Libia", "Malasia", "Malta", "Marruecos", "Mauritania", "Mozambique", "Nicaragua", "Nigeria", "Nueva Zelanda", "Pakistán", "Panamá", "Paraguay", "Perú", "República Checa", "Rumania", "Rusia", "Senegal", "Singapur", "Siria", "Sudáfrica", "Tailandia", "Taiwán", "Tanzania", "Túnez", "Turquía", "Uruguay", "Venezuela", "Yemen", "Yugoslavia", "Zaire/Congo", "Zimbawe", "Resto del Mundo" });
@@ -153,6 +168,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinner.setAdapter(arrayAdapter);
 
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -183,18 +201,86 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.calcular:
-                Intent intent = new Intent(this,ResultadoCosteViaje.class);
+
+                switch (spinner.getSelectedItemPosition()) {
+
+                    case 0:
+                        //España
+                        icAloj1 = 102.56;
+                        icManu1 = 53.34;
+                        icAloj2 = 65.97;
+                        icManu2 = 37.40;
+                        icAloj3 = 48.92;
+                        icManu3 = 28.21;
+                        break;
+                    case 1:
+                        //Alemania
+                        icAloj1 = 155.66;
+                        icManu1 = 68.52;
+                        icAloj2 = 132.82;
+                        icManu2 = 59.50;
+                        icAloj3 = 117.20;
+                        icManu3 = 56.50;
+                        break;
+
+                }
+
+                DietasViajes viaje = new DietasViajes(icAloj1, icManu1, 1, 2);
+                costeAlojF= viaje.calculaCosteAloj();
+                costeManuF= viaje.calculaCosteManu();
+                costeTF= viaje.calculaCoste();
+
+                Intent intent = new Intent(this, ResultadoCosteViaje.class);
+                intent.putExtra("CosteAlojF",costeAlojF);
+                intent.putExtra("CosteManuF",costeManuF);
+                intent.putExtra("CosteTF",costeTF);
                 startActivity(intent);
-
-                //DietasViajes viaje = new DietasViajes(icAloj1, icManu1, Integer.parseInt(noches.getText()), Integer.parseInt(personas.getText()));
-
-
 
                 break;
             default:
-                Toast.makeText(getApplicationContext(),"Faltan datos por seleccionar",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Faltan datos por seleccionar", Toast.LENGTH_SHORT).show();
                 break;
         }
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.aduug.costeviajesrealdecreto/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.aduug.costeviajesrealdecreto/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 }
