@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -202,7 +203,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.calcular:
 
-                switch (spinner.getSelectedItemPosition()) {
+                int index;
+                index= spinner.getSelectedItemPosition();
+                switch (index) {
 
                     case 0:
                         //España
@@ -225,10 +228,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
 
-                DietasViajes viaje = new DietasViajes(icAloj1, icManu1, 1, 2);
+                DietasViajes viaje = new DietasViajes(icAloj1, icManu1, 0,1);
                 costeAlojF= viaje.calculaCosteAloj();
                 costeManuF= viaje.calculaCosteManu();
                 costeTF= viaje.calculaCoste();
+
 
                 Intent intent = new Intent(this, ResultadoCosteViaje.class);
                 intent.putExtra("CosteAlojF",costeAlojF);

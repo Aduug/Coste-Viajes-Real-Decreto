@@ -14,6 +14,7 @@ public class ResultadoCosteViaje extends AppCompatActivity {
     TextView costeAlojF;
     TextView costeManuF;
     TextView costeTF;
+    TextView resum1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,14 @@ public class ResultadoCosteViaje extends AppCompatActivity {
         costeAlojF = (TextView) findViewById(R.id.calojf);
         costeManuF = (TextView) findViewById(R.id.cmanuf);
         costeTF = (TextView) findViewById(R.id.ctotalf);
+        resum1 = (TextView) findViewById(R.id.r1);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        if (bundle!=null){
+        if (bundle != null) {
+
+
             String cadena1 = (bundle.get("CosteAlojF")).toString();
             costeAlojF.setText(cadena1);
             String cadena2 = (bundle.get("CosteManuF")).toString();
@@ -41,11 +45,11 @@ public class ResultadoCosteViaje extends AppCompatActivity {
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-          }
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
         });
     }
 
