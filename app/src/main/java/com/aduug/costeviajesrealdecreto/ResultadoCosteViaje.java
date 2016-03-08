@@ -15,6 +15,7 @@ public class ResultadoCosteViaje extends AppCompatActivity {
     TextView costeManuF;
     TextView costeTF;
     TextView resum1;
+    TextView paisF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class ResultadoCosteViaje extends AppCompatActivity {
         costeManuF = (TextView) findViewById(R.id.cmanuf);
         costeTF = (TextView) findViewById(R.id.ctotalf);
         resum1 = (TextView) findViewById(R.id.r1);
+        paisF = (TextView) findViewById(R.id.paisF);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -40,6 +42,9 @@ public class ResultadoCosteViaje extends AppCompatActivity {
             costeManuF.setText(cadena2);
             String cadena3 = (bundle.get("CosteTF")).toString();
             costeTF.setText(cadena3);
+            String cadena4 = (bundle.get("paisF")).toString();
+            paisF.setText(cadena4);
+
         }
 
 
