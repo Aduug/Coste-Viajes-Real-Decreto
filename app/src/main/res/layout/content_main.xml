@@ -24,10 +24,12 @@
             android:text="@string/grupo" />
 
         <RadioGroup
+            android:id="@+id/radiog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/g1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Grupo 1">
@@ -35,6 +37,7 @@
             </RadioButton>
 
             <RadioButton
+                android:id="@+id/g2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Grupo 2">
@@ -42,6 +45,7 @@
             </RadioButton>
 
             <RadioButton
+                android:id="@+id/g3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Grupo 3">

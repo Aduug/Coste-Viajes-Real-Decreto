@@ -1,12 +1,16 @@
 package com.aduug.costeviajesrealdecreto;
 
 
+import java.text.DecimalFormat;
+
 public class DietasViajes {
 
     private double aloj;
     private double manu;
     private int dias;
     private int pers;
+
+    DecimalFormat df = new DecimalFormat("#.##");
 
     public DietasViajes (double aloj,double manu,int dias, int pers){
         this.aloj=aloj;

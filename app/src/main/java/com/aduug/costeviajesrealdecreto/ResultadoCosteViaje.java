@@ -9,13 +9,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class ResultadoCosteViaje extends AppCompatActivity {
 
     TextView costeAlojF;
     TextView costeManuF;
     TextView costeTF;
-    TextView resum1;
     TextView paisF;
+    TextView npers;
+    TextView nnoches;
+
+    DecimalFormat df = new DecimalFormat("#.##");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +32,9 @@ public class ResultadoCosteViaje extends AppCompatActivity {
         costeAlojF = (TextView) findViewById(R.id.calojf);
         costeManuF = (TextView) findViewById(R.id.cmanuf);
         costeTF = (TextView) findViewById(R.id.ctotalf);
-        resum1 = (TextView) findViewById(R.id.r1);
         paisF = (TextView) findViewById(R.id.paisF);
+        npers = (TextView) findViewById(R.id.npers);
+        nnoches = (TextView) findViewById(R.id.nnoches);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -37,13 +43,17 @@ public class ResultadoCosteViaje extends AppCompatActivity {
 
 
             String cadena1 = (bundle.get("CosteAlojF")).toString();
-            costeAlojF.setText(cadena1);
+            costeAlojF.setText("El coste máx del alojamiento es de " + cadena1 + " Euros ");
             String cadena2 = (bundle.get("CosteManuF")).toString();
-            costeManuF.setText(cadena2);
+            costeManuF.setText("El coste máx de la manutención es de " + cadena2 + " Euros");
             String cadena3 = (bundle.get("CosteTF")).toString();
-            costeTF.setText(cadena3);
+            costeTF.setText("Coste Máximo Total: " + cadena3 + " Euros");
             String cadena4 = (bundle.get("paisF")).toString();
-            paisF.setText(cadena4);
+            paisF.setText("Para un viaje a " + cadena4);
+            String cadena5 = (bundle.get("persInt")).toString();
+            npers.setText("para " + cadena5 + " personas ");
+            String cadena6 = (bundle.get("nochesInt")).toString();
+            nnoches.setText(" y " + cadena6 + " noches de Hotel");
 
         }
 
