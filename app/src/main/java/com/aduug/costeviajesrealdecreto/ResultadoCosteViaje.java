@@ -43,11 +43,11 @@ public class ResultadoCosteViaje extends AppCompatActivity {
 
 
             String cadena1 = (bundle.get("CosteAlojF")).toString();
-            costeAlojF.setText("El coste máx del alojamiento es de " + cadena1 + " Euros ");
+            costeAlojF.setText("El coste máx del alojamiento es de " + cadena1 + " € ");
             String cadena2 = (bundle.get("CosteManuF")).toString();
-            costeManuF.setText("El coste máx de la manutención es de " + cadena2 + " Euros");
+            costeManuF.setText("El coste máx de la manutención es de " + cadena2 + " €");
             String cadena3 = (bundle.get("CosteTF")).toString();
-            costeTF.setText("Coste Máximo Total: " + cadena3 + " Euros");
+            costeTF.setText("Coste Máximo Total: " + cadena3 + " €");
             String cadena4 = (bundle.get("paisF")).toString();
             paisF.setText("Para un viaje a " + cadena4);
             String cadena5 = (bundle.get("persInt")).toString();

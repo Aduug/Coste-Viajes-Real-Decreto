@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -48,6 +49,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int nochesInt = 0;
     int persInt = 0;
     String paisRes = "";
+    private static final int RB1_ID = 1000;
+    private static final int RB2_ID = 1001;
+    private static final int RB3_ID = 1002;
+    RadioButton rb1;
+    RadioButton rb2;
+    RadioButton rb3;
+
 
     DecimalFormat df = new DecimalFormat("#.##");
 
@@ -71,8 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         noches = (EditText) findViewById(R.id.noches);
         personas = (EditText) findViewById(R.id.pers);
         radioGroup = (RadioGroup) findViewById(R.id.radiog);
-
-
+        rb1 = (RadioButton) findViewById(R.id.g1);
+        rb2 = (RadioButton) findViewById(R.id.g2);
+        rb3 = (RadioButton) findViewById(R.id.g3);
 
 
         List list = new ArrayList();
@@ -1116,41 +1125,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
 
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if (checkedId==R.id.g1){
-                            DietasViajes viaje = new DietasViajes(icAloj1, icManu1, nochesInt, persInt);
-                            costeAlojF = viaje.calculaCosteAloj();
-                            costeManuF = viaje.calculaCosteManu();
-                            costeTF = viaje.calculaCoste();
-                            costeAlojFS = df.format(costeAlojF);
-                            costeManuFS = df.format(costeManuF);
-                            costeTFS = df.format(costeTF);
 
-                        }
-                        else if (checkedId==R.id.g2){
-                            DietasViajes viaje = new DietasViajes(icAloj2, icManu2, nochesInt, persInt);
-                            costeAlojF = viaje.calculaCosteAloj();
-                            costeManuF = viaje.calculaCosteManu();
-                            costeTF = viaje.calculaCoste();
-                            costeAlojFS = df.format(costeAlojF);
-                            costeManuFS = df.format(costeManuF);
-                            costeTFS = df.format(costeTF);
+                int btn = radioGroup.getCheckedRadioButtonId();
 
-                        }
-                        else if (checkedId==R.id.g3){
-                            DietasViajes viaje = new DietasViajes(icAloj3, icManu3, nochesInt, persInt);
-                            costeAlojF = viaje.calculaCosteAloj();
-                            costeManuF = viaje.calculaCosteManu();
-                            costeTF = viaje.calculaCoste();
-                            costeAlojFS = df.format(costeAlojF);
-                            costeManuFS = df.format(costeManuF);
-                            costeTFS = df.format(costeTF);
+                switch (btn) {
 
-                        }
-                    }
-                });
+                    case R.id.g1:
+                        DietasViajes viaje = new DietasViajes(icAloj1, icManu1, nochesInt, persInt);
+                        costeAlojF = viaje.calculaCosteAloj();
+                        costeManuF = viaje.calculaCosteManu();
+                        costeTF = viaje.calculaCoste();
+                        costeAlojFS = df.format(costeAlojF);
+                        costeManuFS = df.format(costeManuF);
+                        costeTFS = df.format(costeTF);
+                        break;
+
+                    case R.id.g2:
+                        DietasViajes viaje2 = new DietasViajes(icAloj2, icManu2, nochesInt, persInt);
+                        costeAlojF = viaje2.calculaCosteAloj();
+                        costeManuF = viaje2.calculaCosteManu();
+                        costeTF = viaje2.calculaCoste();
+                        costeAlojFS = df.format(costeAlojF);
+                        costeManuFS = df.format(costeManuF);
+                        costeTFS = df.format(costeTF);
+                        break;
+
+                    case R.id.g3:
+                        DietasViajes viaje3 = new DietasViajes(icAloj3, icManu3, nochesInt, persInt);
+                        costeAlojF = viaje3.calculaCosteAloj();
+                        costeManuF = viaje3.calculaCosteManu();
+                        costeTF = viaje3.calculaCoste();
+                        costeAlojFS = df.format(costeAlojF);
+                        costeManuFS = df.format(costeManuF);
+                        costeTFS = df.format(costeTF);
+
+
+                }
 
 
                 Intent intent = new Intent(this, ResultadoCosteViaje.class);
