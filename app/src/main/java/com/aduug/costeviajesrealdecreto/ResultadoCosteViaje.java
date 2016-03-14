@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -19,6 +20,7 @@ public class ResultadoCosteViaje extends AppCompatActivity {
     TextView paisF;
     TextView npers;
     TextView nnoches;
+    TextView grupoProf;
 
     DecimalFormat df = new DecimalFormat("#.##");
 
@@ -35,6 +37,7 @@ public class ResultadoCosteViaje extends AppCompatActivity {
         paisF = (TextView) findViewById(R.id.paisF);
         npers = (TextView) findViewById(R.id.npers);
         nnoches = (TextView) findViewById(R.id.nnoches);
+        grupoProf = (TextView) findViewById(R.id.grupoProf);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -43,17 +46,19 @@ public class ResultadoCosteViaje extends AppCompatActivity {
 
 
             String cadena1 = (bundle.get("CosteAlojF")).toString();
-            costeAlojF.setText("El coste máx del alojamiento es de " + cadena1 + " € ");
+            costeAlojF.setText(cadena1 + " € ");
             String cadena2 = (bundle.get("CosteManuF")).toString();
-            costeManuF.setText("El coste máx de la manutención es de " + cadena2 + " €");
+            costeManuF.setText(cadena2 + " €");
             String cadena3 = (bundle.get("CosteTF")).toString();
-            costeTF.setText("Coste Máximo Total: " + cadena3 + " €");
+            costeTF.setText(cadena3 + " €");
             String cadena4 = (bundle.get("paisF")).toString();
             paisF.setText("Para un viaje a " + cadena4);
             String cadena5 = (bundle.get("persInt")).toString();
             npers.setText("para " + cadena5 + " personas ");
             String cadena6 = (bundle.get("nochesInt")).toString();
             nnoches.setText(" y " + cadena6 + " noches de Hotel");
+            String cadena7 = (bundle.getString("grupoProf"));
+            grupoProf.setText("en el "+cadena7);
 
         }
 

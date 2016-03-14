@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Coste Viajes BOE</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ayuda</string>
     <string name="intro">Selecciona un País:</string>
     <string name="noches">Numero de noches de Hotel:</string>
     <string name="pers">Numero de personas:</string>
@@ -8,12 +8,10 @@
     <string name="boton">Calcular Coste</string>
     <string name="grupo">Selecciona Grupo Profesional:</string>
     <string name="title_activity_resultado_coste_viaje">Resultado Coste Viaje</string>
-    <string name="Resum1">Para un viaje a </string>
-    <string name="Resum2"> de </string>
-    <string name="Resum3"> días para </string>
-    <string name="Resum4"> personas </string>
-    <string name="Resum5"> el coste máximo del alojamiento es de </string>
-    <string name="Resum6"> y el coste máximo de la manutención de </string>
-    <string name="Resum7"> El coste total del viaje es de </string>
+    <string name="Resum1">Coste Máx Alojamiento: </string>
+    <string name="Resum2">Coste Máx Manutención: </string>
+    <string name="Resum3">Coste Máx Total: </string>
+    <string name="Resum4">(*)Datos del RD 462/2002 (Última modificación 30/10/2015)Información sin valor jurídico</string>
+
 
 </resources>

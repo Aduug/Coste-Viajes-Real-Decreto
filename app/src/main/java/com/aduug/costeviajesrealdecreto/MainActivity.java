@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String costeAlojFS = "";
     String costeManuFS = "";
     String costeTFS = "";
+    String grupoProf ="";
     int nochesInt = 0;
     int persInt = 0;
     String paisRes = "";
@@ -1138,6 +1139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         costeAlojFS = df.format(costeAlojF);
                         costeManuFS = df.format(costeManuF);
                         costeTFS = df.format(costeTF);
+                        grupoProf="Grupo 1";
                         break;
 
                     case R.id.g2:
@@ -1148,6 +1150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         costeAlojFS = df.format(costeAlojF);
                         costeManuFS = df.format(costeManuF);
                         costeTFS = df.format(costeTF);
+                        grupoProf="Grupo 2";
                         break;
 
                     case R.id.g3:
@@ -1158,6 +1161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         costeAlojFS = df.format(costeAlojF);
                         costeManuFS = df.format(costeManuF);
                         costeTFS = df.format(costeTF);
+                        grupoProf="Grupo 3";
+                        break;
 
 
                 }
@@ -1170,6 +1175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("paisF", paisRes);
                 intent.putExtra("nochesInt", nochesInt);
                 intent.putExtra("persInt", persInt);
+                intent.putExtra("grupoProf",grupoProf);
                 startActivity(intent);
 
                 break;
