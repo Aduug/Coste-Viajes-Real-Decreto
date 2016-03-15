@@ -212,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent2 = new Intent(this, AyudaGrupos.class);
+            startActivity(intent2);
             return true;
         }
 
